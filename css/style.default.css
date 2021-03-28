@@ -2,7 +2,7 @@
 =========================================
 =========================================
 
-   Nova | Bootstrap app landing
+   CAREER | Bootstrap app landing
 
 =========================================
 ========================================= */
@@ -1103,6 +1103,56 @@ section {
   font-size: 0.8rem;
 }
 
+.bg-gray{
+  background-color: #fcfcfc;
+}
+
+.ptb--100 {
+  padding: 100px 0
+}
+
+.screen-area {
+  position: relative;
+}
+
+.screen-area .screen-img {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  width: 236px;
+  height: 385px;
+  z-index: 111;
+  transform: translateX(-50%);
+}
+
+.screen-slider {
+  margin-top: 116px;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .screen-area .screen-img {
+    bottom: 30px;
+    width: 184px;
+    height: 300px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .screen-area .screen-img {
+    width: 226px;
+    height: 385px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .screen-area .screen-img{
+    display: none;
+  }
+  .screen-slider {
+    margin-top: 0;
+  }
+}
+
 .testimonial-img {
   width: 100px;
   height: 100px;
@@ -1123,6 +1173,7 @@ section {
   position: absolute;
   bottom: 0;
   right: 0;
+  margin: 0px -10px -10px 0px;
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
   color: #fff;
@@ -1132,14 +1183,20 @@ section {
 }
 
 .faq {
-  width: 80%;
-  border: 1px solid #222;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 0.85rem !important;
+}
+
+.faq .item {
+  text-align: left;
 }
 
 .item .question {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08) !important;
   padding: 15px;
-  background: #C0392B;
-  color: #fff;
+  background: #fff;
+  color: #FACF47;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1165,6 +1222,12 @@ section {
 .item .answer {
   padding: 15px;
   display: none;
+}
+
+@media (max-width: 768px) {
+  .item .question .fa.fa-minus, .item .question .fa.fa-plus {
+    display: none;
+  }
 }
 
 .footer-link {
@@ -1251,7 +1314,10 @@ section {
   text-decoration: none;
   background: #3c37b5;
 }
-
+.screen-img .device-wrapper{
+  height: 365px;
+  width: 206px;
+}
 .device-wrapper {
   z-index: 999;
   position: relative;
@@ -1303,36 +1369,6 @@ section {
   z-index: -1;
   overflow: hidden;
   overflow: hidden;
-}
-
-/*
-
-=====================
-STYLE SWITCHER FOR DEMO
-=====================
-
-*/
-#style-switch-button {
-  position: fixed;
-  top: 120px;
-  left: 0px;
-  border-radius: 0;
-  z-index: 2;
-}
-
-#style-switch {
-  width: 300px;
-  padding: 20px;
-  position: fixed;
-  top: 160px;
-  left: 0;
-  background: #fff;
-  border: solid 1px #ced4da;
-  z-index: 2000;
-}
-
-#style-switch h4 {
-  color: #495057;
 }
 
 /* =========================================
@@ -1509,6 +1545,7 @@ STYLE SWITCHER FOR DEMO
   color: #fff;
   background-color: #FACF47;
   border-color: #FACF47;
+  margin-top: 5px;
 }
 
 .btn-primary:hover {
