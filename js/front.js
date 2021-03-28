@@ -77,6 +77,22 @@ $(function () {
         items: 1,
         dots: true
     });
+    axios
+        .get("./api/uploadReviews.php")
+        .then((res) => {
+            $('.review').text(res.data.review);
+            $('.reviewerName').text(res.data.reviewerName);
+            $('.reviewerGrade').text(res.data.reviewerGrade);
+            $('.testimonial-img-1').attr("src", res.data.src1);
+            $('.review-2').text(res.data.review2);
+            $('.reviewerName-2').text(res.data.reviewerName2);
+            $('.reviewerGrade-2').text(res.data.reviewerGrade2);
+            $('.testimonial-img-2').attr("src", res.data.src2);
+            $('.review-3').text(res.data.review3);
+            $('.reviewerName-3').text(res.data.reviewerName3);
+            $('.reviewerGrade-3').text(res.data.reviewerGrade3);
+            $('.testimonial-img-3').attr("src", res.data.src3);
+        });
 
     // ================================================
     //  MODAL VIDEO
