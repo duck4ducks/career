@@ -38,8 +38,11 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item"><a class="nav-link link-scroll active" href="#hero">Приложение <span class="sr-only">(current)</span></a></li>
           <li class="nav-item"><a class="nav-link link-scroll" href="#about">О нас</a></li>
+          <li class="nav-item"><a class="nav-link link-scroll" href="#video">Промо</a></li>
+          <li class="nav-item"><a class="nav-link link-scroll" href="#screenshot">Скриншоты</a></li>
           <li class="nav-item"><a class="nav-link link-scroll" href="#services">Сервисы</a></li>
           <li class="nav-item"><a class="nav-link link-scroll" href="#testimonials">Отзывы</a></li>
+          <li class="nav-item"><a class="nav-link link-scroll" href="#faq-section">FAQ</a></li>
         </ul>
       </div>
     </div>
@@ -157,7 +160,7 @@
           </div>
         </div>
       </div>
-      <!--          specialties Modal-->
+      <!-- specialties Modal-->
       <div class="modal fade" id="specialtiesModal" tabindex="-1" role="dialog" aria-labelledby="specialtiesModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -233,6 +236,36 @@
             <li class="text-muted mb-2">Интересы, предрасположенность</li>
             <li class="text-muted mb-2">Знания, успеваемость, баллы</li>
           </ul>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#testsModal" data-specialty="">Демо тесты</button>
+        </div>
+        <!-- tests Modal-->
+        <div class="modal fade" id="testsModal" tabindex="-1" role="dialog" aria-labelledby="specialtiesModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="testsModalLabel">Профориентационные тесты демо</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>Больше тестов можно найти в мобильном приложении</p>
+                <div class="card test">
+                  <img src="img/Е.А.Климов.jpg" class="card-img-top" alt="Е.А.Климов">
+                  <div class="card-body">
+                    <h5 class="card-title">Тест на профориентацию по методике Е.А.Климова</h5>
+                    <p class="card-text">Методика основана на классификации профессиональных интересов. Позволяет установить
+                      в какой области старшекласснику лучше всего выбрать специальность, по которой он будет
+                      проходить профессиональное обучение после школы.</p>
+                    <a class="btn btn-primary btn-test-demo" href="#" target="_blank" >Пройти тест</a>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="col-lg-6">
           <div class="row">
