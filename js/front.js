@@ -152,22 +152,19 @@ $(function () {
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)
         modal.find('.modal-title').text('Cпециальность ' + recipient);
-    })
+        modal.find('.btn-test-demo').attr("data", recipient);
+    });
 
     // ================================================
-    // Enable modal for demo tests
+    // Test for mrk specialties
     // ================================================
-    //$('#testsModal').on('show.bs.modal', function (event) {
-    //    var button = $(event.relatedTarget)
-    //    var recipient = button.data('specialty')
-    //    axios
-    //        .post("./api/specialties.php", { "specialty": recipient })
-    //        .then((res) => {
-    //            modal.find('.modal-body').text(res.data.info)
-    //        })
-    //    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    //    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    //    var modal = $(this)
-    //    modal.find('.modal-title').text('Cпециальность ' + recipient);
-    //})
+    $('.btn-test-demo').on('click', function (event) {
+        var recipient = $(this).attr("data")
+        axios
+            .post("./api/uploadJSONquiz.php", { "specialty": recipient })
+            .then((res) => {
+                    alert(res.data.info)
+            }
+            )
+    })
 });

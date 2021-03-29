@@ -1,0 +1,13 @@
+[
+  {
+    "question_id" : 0,
+    	"question": "пипрэс?",
+    	"answers": [
+    	  {"id": 0, "text": "да"},
+    	  {"id": 1, "text": "нет"}
+    	],
+    	"correct": 0
+  }
+]
+
+
