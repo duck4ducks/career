@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Esakiv Admin panel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://kit.fontawesome.com/20ac23c128.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<iframe src="" frameborder="0"></iframe>
+<input id="img-upload" type="file" accept="image/*" style="display: none">
+    <div id="app">
+        <div class="panel" v-if="auth">
+            <div>
+                <button class="uk-button uk-button-default" uk-toggle="target: #modal-open">Открыть</button>
+                <button class="uk-button uk-button-default" uk-toggle="target: #modal-meta">Редактор МЕТА</button>
+            </div>
+            <div>
+                <button class="uk-button uk-button-primary" uk-toggle="target: #modal-save">Опубликовать</button>
+                <button class="uk-button uk-button-primary btn-cloud"><i class="fas fa-cloud"></i></button>
+                <div uk-dropdown class="dropdown"><button class="uk-button uk-button-default" uk-toggle="target: #modal-backup">Восстановить</button></div>
+                <button class="uk-button uk-button-danger" uk-toggle="target: #modal-logout">Выход</button>
+            </div>
+        </div>
+
+        <div id="modal-open" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Открыть</h2>
+                <ul class="uk-list uk-list-striped">
+                    <li v-for="page in pageList"><a class="uk-link-muted uk-modal-close" href="#" v-on:click="openPage(page)">{{ page }}</a></li>
+                </ul>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+                </p>
+            </div>
+        </div>
+
+        <div id="modal-meta" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Редактор МЕТА тегов</h2>
+                <form>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="Title" v-model="meta.title">
+                    </div>
+                    <div class="uk-margin">
+                        <textarea class="uk-textarea" rows="5" placeholder="Keywords" v-model="meta.keywords"></textarea>
+                    </div>
+                    <div class="uk-margin">
+                        <textarea class="uk-textarea" rows="5" placeholder="Description" v-model="meta.description"></textarea>
+                    </div>
+                </form>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" type="button" @click="applyMeta">Применить</button>
+                </p>
+            </div>
+        </div>
+
+        <div id="modal-save" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Сохранение</h2>
+                <p>Вы хотите сохранить внесенные изменения?</p>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" type="button" @click="onBtnSave">Опубликовать</button>
+                </p>
+            </div>
+        </div>
+
+        <div id="modal-logout" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Выход</h2>
+                <p>Вы хотите выйти из панели администратора?</p>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" type="button" @click="logout">Выход</button>
+                </p>
+            </div>
+        </div>
+
+        <div id="modal-backup" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Восстановление</h2>
+                <span v-if="backupList.length < 1">Резервных копий не найдно</span>
+                <ul class="uk-list uk-list-striped">
+                    <li v-for="backup in backupList"><a class="uk-link-muted uk-modal-close" href="#" v-on:click="restoreBackup(backup)">Резервная копия страницы от {{ backup.time }}</a></li>
+                </ul>
+                <p class="uk-text-right">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Отмена</button>
+                </p>
+            </div>
+        </div>
+
+        <div class="loader" v-bind:class="{ 'active': showLoader}">
+            <span uk-spinner="ratio: 4.5"></span>
+        </div>
+
+        <div class="login-container" v-if="!auth">
+            <div class="login" v-on:keyup.enter="login">
+                <h2 class="uk-modal-title">Авторизация</h2>
+                <input type="password" name="" id="" class="uk-input" placeholder="Пароль" v-model="password">
+                <span class="login-error" v-if="loginError"> Неверный пароль! Обратите внимание, что пароль должен быть больше 5 символов. </span>
+                <button class="uk-button uk-button-primary" type="button" @click="login">Вход</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="bundle.js"></script>
+</body>
+</html>
