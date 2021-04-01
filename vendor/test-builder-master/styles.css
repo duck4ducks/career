@@ -20,7 +20,7 @@ body {
 
 .container {
   width:80%;
-  max-width: 1024px;
+  max-width:768px;
   margin:0 auto 30px;
   background:#fff;
   padding-bottom:30px;
@@ -31,11 +31,6 @@ h1 {
 }
 h2 {
   margin-top:10px;
-}
-.test-header{
-  width: 80%;
-  margin: 10px auto;
-  text-align: center;
 }
 .quizTitle {
   display:block;
@@ -90,26 +85,30 @@ introContainer {
   font-weight: 300;
   box-shadow:1px 1px 3px rgba(0,0,0,0.3);
 }
-.text-uppercase {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  letter-spacing: .1em;
+/* check mark icon - try alternative
+.quizBox.boxSelect .ansImage:before, .quizBox.boxSelect .ansText:before {
+    position: absolute;
+    font-family: FontAwesome;
+    content: "\f00c";
 }
-.h6 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  font-family: inherit;
-  font-weight: 600;
-  line-height: 1.2;
-  color: inherit;
+.quizBox.boxSelect .ansImage + .ansText:before {
+  content:"";
 }
-.text-primary {
-  color: #FACF47 !important;
+.quizBox.boxSelect .ansImage:before {
+    font-size: 10em;
+    top: 25%;
+    left: 0;
+    right: 0;
+    text-align: center;
 }
-
-a.text-primary:hover, a.text-primary:focus {
-  color: #3c37b5 !important;
+.quizBox.boxSelect .ansText:before {
+    font-size: 3.5em;
+    top: -6%;
+    left:0;
+    right: 0;
+    opacity:0.5;
 }
+*/ 
 .ansText {
   padding:15px;
   text-align:center;

@@ -35,6 +35,7 @@ $(function () {
             autoplay: true,
             center: true,
             autoplayTimeout: 2000,
+            autoplayHoverPause: true,
             dotsEach: false,
             responsive: {
                 0: {
@@ -66,7 +67,8 @@ $(function () {
         items: 1,
         dots: true,
         autoplay:true,
-        autoplayTimeout:1000,
+        smartSpeed: 1000,
+        autoplayTimeout:3000,
         autoplayHoverPause:true
     });
 
@@ -148,8 +150,6 @@ $(function () {
             .then((res) => {
                 modal.find('.modal-body').text(res.data.info)
             })
-        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)
         modal.find('.modal-title').text('Cпециальность ' + recipient);
         modal.find('.btn-test-demo').attr("data", recipient);
@@ -162,9 +162,5 @@ $(function () {
         var recipient = $(this).attr("data")
         axios
             .post("./api/uploadJSONquiz.php", { "specialty": recipient })
-            .then((res) => {
-                    alert(res.data.info)
-            }
-            )
     })
 });

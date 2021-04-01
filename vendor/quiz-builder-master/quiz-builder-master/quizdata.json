@@ -1,94 +1,18 @@
+{ "test_q":
 [
-  {
-    "question_id" : 0,
-    	"question": "What is the original native name of Mount Rainier?",
-    	"answers": [
-    	  {"id": 0, "text": "Tahoma"},
-    	  {"id": 1, "text": "Shuksan"}
-    	],
-    	"correct": 0
-  },
-  {
-    "question_id" : 1,
-		"question" : "Which image shows a close-up of the Nisqually Glacier?",
-	  	"answers": [
-			  {"id": 0, "text": "Tahoma"},
-			  {"id": 1, "text": "Shuksan"}
-	  	],
-		"correct"  : 0
-	},
 	{
-      "question_id" : 2,
-		"question" : "True or false: Mount Rainier is an active volcano?",
-		"answers"  : [
-			{"id"  : 0, "text" : "False"},
-			{"id"  : 1, "text" : "True"}
+		"question_id" : 0,
+		"question": "пмс?",
+		"answers": [
+			{"id": 0, "text": "да"},
+			{"id": 1, "text": "нет"}
 		],
-		"correct"  : 1
-	},
-	{
-      "question_id" : 3,
-		"question" : "How many major glaciers are on top of Mount Rainier?",
-		"answers"  : [
-			{"id"  : 0, "text" : "9"},
-			{"id"  : 1, "text" : "36"}
-		],
-		"correct"  : 1
-	},
-	{
-      "question_id" : 4,
-		"question" : "Which American poet wrote a poem about the Nisqually Glacier, titled 'An Octopus?'",
-		"answers"  : [
-			{"id"  : 0, "text" : "Robert Frost"},
-			{"id"  : 1, "text" : "Walt Whitman"}
-		],
-		"correct"  : 1
-	},
-	{
-      "question_id" : 5,
-		"question" : "Which American poet wrote a poem about the Nisqually Glacier, titled 'An Octopus?'",
-		"answers"  : [
-			{"id"  : 0, "text" : "Robert Frost"},
-			{"id"  : 1, "text" : "Walt Whitman"}
-		],
-		"correct"  : 2
-	},
-	{
-      "question_id" : 6,
-		"question" : "Which American poet wrote a poem about the Nisqually Glacier, titled 'An Octopus?'",
-		"answers"  : [
-			{"id"  : 0, "text" : "Robert Frost"},
-			{"id"  : 1, "text" : "Walt Whitman", "image": "images/quizImages/whitman.jpg"}
-		],
-		"correct"  : 1
-	},
-	{
-      "question_id" : 7,
-		"question" : "Which American poet wrote a poem about the Nisqually Glacier, titled 'An Octopus?'",
-		"answers"  : [
-			{"id"  : 0, "text" : "Robert Frost"},
-			{"id"  : 1, "text" : "Walt Whitman"}
-		],
-		"correct"  : 2
-	},
-	{
-      "question_id" : 8,
-		"question" : "Which American poet wrote a poem about the Nisqually Glacier, titled 'An Octopus?'",
-		"answers"  : [
-			{"id"  : 0, "text" : "Robert Frost", "image": "images/quizImages/frost.jpg"},
-			{"id"  : 1, "text" : "Walt Whitman", "image": "images/quizImages/whitman.jpg"}
-		],
-		"correct"  : 1
-	},
-	{
-      "question_id" : 9,
-		"question" : "Which American poet wrote a poem about the Nisqually Glacier, titled 'An Octopus?'",
-		"answers"  : [
-			{"id"  : 0, "text" : "Robert Frost"},
-			{"id"  : 1, "text" : "Walt Whitman"}
-		],
-		"correct"  : 0
+		"correct": 0
 	}
-]
-
+],
+	"specialtyAbbreviation" : "ПМС",
+	"specialtyLink" : "https://www.mrk-bsuir.by/ru/content/otdeleniya-otdelenie-kompyuternyh-tehnologiy",
+	"specialty" : "Программируемые мобильные системы",
+	"info" : "текст про спецуху"
+}
 

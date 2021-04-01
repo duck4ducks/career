@@ -1,13 +1,19 @@
+{ "test_q":
 [
-  {
-    "question_id" : 0,
-    	"question": "тэрэс?",
-    	"answers": [
-    	  {"id": 0, "text": "Да"},
-    	  {"id": 1, "text": "Нет"}
-    	],
-    	"correct": 0
-  }
-]
+	{
+		"question_id" : 0,
+		"question": "тэрэс?",
+		"answers": [
+			{"id": 0, "text": "да"},
+			{"id": 1, "text": "нет"}
+		],
+		"correct": 0
+	}
+],
+	"specialtyAbbreviation" : "ТЭРЭС",
+	"specialtyLink" : "https://www.mrk-bsuir.by/ru/content/otdeleniya-radiotehnicheskoe-otdelenie",
+	"specialty" : "Техническая эксплуатация радиоэлектронных средств",
+	"info" : "текст про спецуху"
+}
 
 

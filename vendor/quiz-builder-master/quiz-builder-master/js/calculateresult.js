@@ -25,6 +25,22 @@ function checkResult(userAnswers, correctAnswers) {
   return score;
 }
 
+//function getData(){
+//  $.getJSON( "quizdata.json", function( data ) {
+//    var abb = document.getElementById('specialty');
+//    var specialty = document.getElementById('specialty-text');
+//
+//    if (typeof abb.textContent !== "undefined") {
+//      abb.textContent = data.specialtyAbbreviation;
+//      specialty.textContent = data.specialty;
+//    } else {
+//      abb.innerText = data.specialtyAbbreviation;
+//      specialty.innerText = data.specialty;
+//    }
+//    abb.innetHTML = '<p>Специальность</p>'
+//  });
+//}
+
 //display result in success page сюда
 function displayResult() {
   var score = checkResult(userAnswers, correctAnswers);

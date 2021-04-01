@@ -1,3 +1,4 @@
+{ "test_q":
 [
   {
     "question_id" : 0,
@@ -8,6 +9,10 @@
     	],
     	"correct": 0
   }
-]
-
+],
+	"specialtyAbbreviation" : "ПиПРЭС",
+	"specialtyLink" : "https://www.mrk-bsuir.by/ru/content/otdeleniya-radiotehnicheskoe-otdelenie",
+	"specialty" : "Проектирование и производство радиоэлектронных средств",
+	"info" : "текст про спецуху"
+}
 

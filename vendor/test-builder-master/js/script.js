@@ -92,10 +92,10 @@ function quizActions(){
         getThisQuest('next');
         // change button text for first/last question
         if (questEnd === (questNum + 1)){
-          $('.btnNext').html('Финиш <i class="fa fa-check" aria-hidden="true"></i>')
+          $('.btnNext').html('Finish <i class="fa fa-check" aria-hidden="true"></i>')
         }
         if (questEnd != (questNum + 1)){
-          $('.btnNext').html('Далее <i class="fa fa-chevron-right" aria-hidden="true"></i>')
+          $('.btnNext').html('Next <i class="fa fa-chevron-right" aria-hidden="true"></i>')
         }
         if (questNum != 2){
           $('.btnBack').removeClass('inactive')
@@ -131,7 +131,7 @@ function quizActions(){
         $(questBack).attr('id' , 'questionNow')
       }
       else {
-        alert('You can\'t back up any more, silly!'); // user is already on first question
+        alert('Вернуться назад нельзя'); // user is already on first question
         $(questNow).attr('id' , 'questionNow')
       }
     }
@@ -201,28 +201,10 @@ function init(){
 
 window.onload = init;
 
-// get the quiz data from the external JSON file
+// get the test data from the external JSON file
 function getData(){
-  $.getJSON( "quizdata.json", function( data ) {
+  $.getJSON( "testdata.json", function( data ) {
     quizSetupv2(data);
-
-    var abb = document.getElementById('specialty');
-    var specialty = document.getElementById('specialty-text');
-    var specialty_info = document.getElementById('specialty-info');
-
-    if (typeof abb.textContent !== "undefined") {
-      abb.textContent = data.specialtyAbbreviation;
-      abb.setAttribute('href', data.specialtyLink);
-      specialty.textContent = data.specialty;
-      specialty_info.textContent = data.info;
-    } else {
-      abb.innerText = data.specialtyAbbreviation;
-      abb.setAttribute('href', data.specialtyLink);
-      specialty.innerText = data.specialty;
-      specialty_info.innerText = data.info;
-    }
-    abb.innetHTML = '<p>Специальность</p>'
-
   });
 }
 
@@ -233,26 +215,27 @@ function quizSetupv2(quizData){
   var qText;
   var qAnswers;
   var qLength;
-  var qCorrectAnswers = []
+  var qTypeCounter = new Array(quizData.length);
+  for(var n = 0; n < qTypeCounter.length; n++)
+    qTypeCounter[n] = new Array(2);
   // loop through JSON objects
-  console.log(quizData);
-  for(i=0; i < quizData.test_q.length; i++){
-    qID = (quizData.test_q[i].question_id + 1);
-    qText = quizData.test_q[i].question;
-    qAnswers = quizData.test_q[i].answers;
-    qLength = quizData.test_q.length;
+  for(i=0; i < quizData.length; i++){
+    qID = (quizData[i].question_id + 1);
+    qText = "Предположим, что после соответствующего обучения ты сможешь выполнять любую работу. Однако, если бы тебе пришлось выбирать только из двух возможностей, что ты предпочтешь?";
+    qAnswers = quizData[i].answers;
+    qLength = quizData.length;
     qLength = qLength.toString();
-    qCorrectAnswers.push(quizData.test_q[i].correct);
+    qTypeCounter[i] = [qAnswers[0].tCounter, qAnswers[1].tCounter];
     // send each object to build function
-    buildQuiz(qID, qText, qAnswers, qLength, qCorrectAnswers);
+    buildQuiz(qID, qText, qAnswers, qLength, qTypeCounter);
   }
   quizSetup();
 }
 
 // answer level - this function is executed at each cycle of the above question loop 
-function buildQuiz(qID, qText, qAnswers, qLength, qCorrectAnswers){
+function buildQuiz(qID, qText, qAnswers, qLength, qTypeCounter){
   // store array for correct answers
-  localStorage.setItem('correctAnswers', qCorrectAnswers);
+  localStorage.setItem('TypeCounter', JSON.stringify(qTypeCounter));
   // array for answers
   var midCode = [];
   var midCodeFull;
