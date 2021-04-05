@@ -153,7 +153,7 @@ function quizActions(){
     // put result into local storage for access by success page
     localStorage.setItem('userAnswers', finalResult);
     // open success page
-     window.location.href = "success.html";
+     window.location.href = "success.php";
   };
   
   //make sure every question has been answered 

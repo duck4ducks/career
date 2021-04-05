@@ -25,24 +25,11 @@ function checkResult(userAnswers, correctAnswers) {
   return score;
 }
 
-//function getData(){
-//  $.getJSON( "quizdata.json", function( data ) {
-//    var abb = document.getElementById('specialty');
-//    var specialty = document.getElementById('specialty-text');
-//
-//    if (typeof abb.textContent !== "undefined") {
-//      abb.textContent = data.specialtyAbbreviation;
-//      specialty.textContent = data.specialty;
-//    } else {
-//      abb.innerText = data.specialtyAbbreviation;
-//      specialty.innerText = data.specialty;
-//    }
-//    abb.innetHTML = '<p>Специальность</p>'
-//  });
-//}
-
 //display result in success page сюда
 function displayResult() {
+  $.getJSON( "quizdata.json", function( data ) {
+    $('#specialty').val(data.specialty);
+  });
   var score = checkResult(userAnswers, correctAnswers);
   var str = "Вы неплохо справились!";
   $('.result').html('Ваш результат <span class="displayPercent">' + score + ' процентов</span> по резултатам теста!');
@@ -62,5 +49,6 @@ function displayResult() {
     str = "Вау! Да вы нам просто нужны! Вся страна ждет, пока такие гении закатают рукава и возьмутся за разработку. В будущем вас ждет ослепительная карьера, хоть это и не сайт гадалка.ком. Интерес и предрасположенность - главные факторы успеха, а навыки найдут вас сами в нашем колледже!";
   }
   $('.result-text').text(str);
+  $('#result').val(str);
 }
 window.onload = displayResult;

@@ -12,6 +12,11 @@ const sass = require('gulp-sass');
 const dist = "C:\\Users\\Ytta\\Downloads\\openserver\\domains\\diplom-careeer";
 const distProd = "./build/";
 
+gulp.task("admin", () => {
+    return gulp.src('./admin/**/*')
+        .pipe(gulp.dest(dist + '/admin/'));
+});
+
 gulp.task("copy-html", () => {
     return gulp.src("./index.html")
         .pipe(gulp.dest(dist));
