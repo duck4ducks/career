@@ -56,6 +56,7 @@ $(function () {
             }
         });
     }
+
     screen_slider();
 
 
@@ -66,10 +67,10 @@ $(function () {
         loop: true,
         items: 1,
         dots: true,
-        autoplay:true,
+        autoplay: true,
         smartSpeed: 1000,
-        autoplayTimeout:3000,
-        autoplayHoverPause:true
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true
     });
 
     // ================================================
@@ -105,7 +106,7 @@ $(function () {
     //  FAQ
     // ================================================
     $(".faq").accordion({
-        animationDuration:500,
+        animationDuration: 500,
         questionClass: '.question',
         answerClass: '.answer',
         itemClass: '.item'
@@ -116,7 +117,7 @@ $(function () {
     // ================================================
     $('#scrollTop').on('click', function (e) {
         e.preventDefault();
-        $('html, body').animate({ scrollTop: 0}, 1000);
+        $('html, body').animate({scrollTop: 0}, 1000);
     });
 
     // ================================================
@@ -146,7 +147,7 @@ $(function () {
         var button = $(event.relatedTarget)
         var recipient = button.data('specialty')
         axios
-            .post("./api/specialties.php", { "specialty": recipient })
+            .post("./api/specialties.php", {"specialty": recipient})
             .then((res) => {
                 modal.find('.modal-body').text(res.data.info)
             })
@@ -161,6 +162,15 @@ $(function () {
     $('.btn-test-demo').on('click', function (event) {
         var recipient = $(this).attr("data")
         axios
-            .post("./api/uploadJSONquiz.php", { "specialty": recipient })
+            .post("./api/uploadJSONquiz.php", {"specialty": recipient})
     })
+
+    // ================================================
+    // Technical support
+    // ================================================
+    $('#reviewModal').on('show.bs.modal', function (event) {
+        var modal = $(this)
+        modal.find('.modal-title').text('Техническая поддержка');
+        modal.find('textarea').attr("placeholder", 'Опишите свою проблему...');
+    });
 });
