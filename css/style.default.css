@@ -497,6 +497,55 @@ a.text-hover-dark:focus, a.text-hover-dark:hover {
   background-color: #e7e7e8;
 }
 
+#quest{
+  margin-top: 30px;
+}
+
+.border {
+  height: 420px;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  border: none!important;
+  width: 800px;
+}
+.iframe-container {
+  position: relative;
+  width: 110%;
+  height: 100%;
+  margin: 0 auto;
+  background: #FACF47;
+}
+.iframe-container:before,
+.iframe-container:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  background: repeating-linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0) 18px, #F9DAC8 18px, #F9DAC8 25px);
+}
+.iframe-container:before {left: -10%}
+.iframe-container:after {right: -10%}
+.iframe-container iframe {
+  width: 750px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border: 2px solid #FACF47;
+}
+.iframe-container h3 {
+  position: absolute;
+  left: 60%;
+  top: 60px;
+  background: #FACF47;
+  border: 2px solid #FACF47;
+  color: #FACF47;
+  padding: 5px 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
 /*
      Transparent overlays
     ------------------------

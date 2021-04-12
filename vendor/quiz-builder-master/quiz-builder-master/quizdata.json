@@ -2,7 +2,7 @@
 [
 	{
 		"question_id" : 0,
-		"question": "пмс?",
+		"question": "МРК?",
 		"answers": [
 			{"id": 0, "text": "да"},
 			{"id": 1, "text": "нет"}
@@ -10,7 +10,7 @@
 		"correct": 0
 	}
 ],
-	"specialtyAbbreviation" : "ПМС",
+	"specialtyAbbreviation" : "МРК",
 	"specialtyLink" : "https://www.mrk-bsuir.by/ru/content/otdeleniya-otdelenie-kompyuternyh-tehnologiy",
 	"specialty" : "Программируемые мобильные системы",
 	"info" : "текст про спецуху"
