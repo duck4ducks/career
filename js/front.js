@@ -169,8 +169,11 @@ $(function () {
     // Technical support
     // ================================================
     $('#reviewModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)
+        if(button.data('specialty') === 'techsupp'){
         var modal = $(this)
         modal.find('.modal-title').text('Техническая поддержка');
         modal.find('textarea').attr("placeholder", 'Опишите свою проблему...');
+        }
     });
 });
