@@ -92,10 +92,10 @@ function quizActions(){
         getThisQuest('next');
         // change button text for first/last question
         if (questEnd === (questNum + 1)){
-          $('.btnNext').html('Finish <i class="fa fa-check" aria-hidden="true"></i>')
+          $('.btnNext').html('Финиш <i class="fa fa-check" aria-hidden="true"></i>')
         }
         if (questEnd != (questNum + 1)){
-          $('.btnNext').html('Next <i class="fa fa-chevron-right" aria-hidden="true"></i>')
+          $('.btnNext').html('Далее <i class="fa fa-chevron-right" aria-hidden="true"></i>')
         }
         if (questNum != 2){
           $('.btnBack').removeClass('inactive')
@@ -153,7 +153,7 @@ function quizActions(){
     // put result into local storage for access by success page
     localStorage.setItem('userAnswers', finalResult);
     // open success page
-     window.location.href = "success.phphtml";
+     window.location.href = "success.php";
   };
   
   //make sure every question has been answered 

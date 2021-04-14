@@ -506,7 +506,6 @@ a.text-hover-dark:focus, a.text-hover-dark:hover {
     padding: 30px 40px;
     box-sizing: border-box;
     border: none !important;
-    width: 800px;
 }
 
 .iframe-container {
@@ -3246,8 +3245,8 @@ code {
 
 .form-inner input[type="submit"] {
     margin-top: 30px;
-    background: #FACF47;
-    border-bottom: 4px solid #d87d56;
+    background: #fad600;
+    border-bottom: 4px solid #af6c08;
     color: white;
     font-size: 14px;
 }
