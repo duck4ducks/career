@@ -1,14 +1,50 @@
 { "test_q":
 [
-  {
-    "question_id" : 0,
-    	"question": "пипрэс?",
-    	"answers": [
-    	  {"id": 0, "text": "да"},
-    	  {"id": 1, "text": "нет"}
-    	],
-    	"correct": 0
-  }
+	{
+		"question_id" : 0,
+		"question": "Нравится ли вам черчение?",
+		"answers": [
+			{"id": 0, "text": "Нет, не люблю кропотливую работу"},
+			{"id": 1, "text": "Да, мне нравится"}
+		],
+		"correct": 1
+	},
+	{
+		"question_id" : 1,
+		"question" : "Интересовало ли вас когда нибудь создание техники?",
+		"answers": [
+			{"id": 0, "text": "Работает - не трогай"},
+			{"id": 1, "text": "Да, с детства интересовал механизм"}
+		],
+		"correct"  : 1
+	},
+	{
+		"question_id" : 2,
+		"question" : "Понимаете ли вы электрические схемы, которые рисовали в школе?",
+		"answers"  : [
+			{"id"  : 0, "text" : "Да"},
+			{"id"  : 1, "text" : "Нет"}
+		],
+		"correct"  : 0
+	},
+	{
+		"question_id" : 3,
+		"question" : "Приходилось ли вам чинить какую-либо технику?",
+		"answers"  : [
+			{"id"  : 0, "text" : "Да, устранял мелкие бытовые поломки или наблюдал за этим"},
+			{"id"  : 1, "text" : "Второе"}
+		],
+		"correct"  : 0
+	},
+	{
+		"question_id" : 4,
+		"question" : "Хотите ли вы изучать проектирование электротехники одним из путей?",
+		"answers"  : [
+			{"id"  : 0, "text" : "По видеороликам и книжкам"},
+			{"id"  : 1, "text" : "Опытным путем, практикуясь"}
+		],
+		"correct"  : 1
+	}
 ],
 	"specialtyAbbreviation" : "ПиПРЭС",
 	"specialtyLink" : "https://www.mrk-bsuir.by/ru/content/otdeleniya-radiotehnicheskoe-otdelenie",
